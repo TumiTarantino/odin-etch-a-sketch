@@ -1,16 +1,28 @@
-.all-squares-container{
-    max-width: 1000px;
+
+.all-squares-container {
+    width: 960px;
+    height: 960px;
 }
 
-.grid-container{
+/*.grid-container{
     display:flex;
     flex-basis: auto;
 }
 .square{
     border: black solid 2px;
     height: 50px;
-    width: 50px;
-    /* flex: 1; */
+    width: 50px; 
+}*/
+
+.grid-container {
+    display: flex;
+    flex: 1;
+}
+.square {
+    box-sizing: border-box;
+    flex: 1;
+    aspect-ratio: 1;
+    border: black solid 1px;
 }
 
 .button{

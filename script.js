@@ -4,26 +4,14 @@
 const allSquaresContainer = document.querySelector(".all-squares-container")
 const hwButton = document.querySelector(".HW-button")
 
-let height = Number(prompt("Height?: "))
-let width = Number(prompt("Width? :"))
-
-while(height > 15 || height < 0){
-    alert("Enter a number between 0 and 15")
-    height = Number(prompt("Height?: "))
-}
-
-while(width > 15 || width < 0){
-    alert("Enter a number between 0 and 15")
-    width = Number(prompt("Width? :"))
-}
 
 //adding to square to gridContainer
-function makeGrid(height, width){
-    for(let i = 0; i < height; i++){
+function makeGrid(size){
+    for(let i = 0; i < size; i++){
     const gridContainer = document.createElement("div")
     gridContainer.classList.add("grid-container")
     allSquaresContainer.appendChild(gridContainer)
-    for(let j = 0; j < width; j++){
+    for(let j = 0; j < size; j++){
         const square = document.createElement("span")
         square.classList.add("square")
         gridContainer.appendChild(square)
@@ -45,27 +33,21 @@ function makeGrid(height, width){
 }
 }
 
-makeGrid(height,width)
+makeGrid(16)
 
 hwButton.addEventListener("click", () => {
     //How to delete previous grid?
     
-    height = Number(prompt("Height?: "))
-    width = Number(prompt("Width? :"))
+    let size = prompt("Size?: ")
 
-    while(height > 15 || height < 0){
-        alert("Enter a number between 0 and 15")
+    while(size > 100 || size < 1){
+        alert("Enter a number between 2 and 100")
         height = Number(prompt("Height?: "))
-    }
-
-    while(width > 15 || width < 0){
-        alert("Enter a number between 0 and 15")
-        width = Number(prompt("Width? :"))
     }
 
     //makes allsquares empty
     allSquaresContainer.innerHTML = ""
-    makeGrid(height,width)
+    makeGrid(size)
 })
 
 
